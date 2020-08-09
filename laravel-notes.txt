@@ -29,7 +29,7 @@
 
 # Controladores Resources y API.
 
-    # Controller Resources
+    # Resource Controller 
 
         > php artisan make:controller PortfolioController -r
 
@@ -61,3 +61,36 @@
             |        | DELETE    | projects/{project}      | projects.destroy | App\Http\Controllers\PortfolioController@destroy | web        |
             |        | GET|HEAD  | projects/{project}/edit | projects.edit    | App\Http\Controllers\PortfolioController@edit    | web        |
             +--------+-----------+-------------------------+------------------+--------------------------------------------------+------------+
+
+    # API Controller
+
+        > php artisan make:controller PortfolioController --api
+
+            Crea un controller con los metodos:
+                1 - Index.      (Usado para listar recursos)
+                2 - Store       (Guardar recursos en la base de datos)
+                3 - Show        (Mostramos un recurso en especifico por ID)
+                4 - Update      (Guardamos la actualizacion de un recurso)
+                5 - Destroy     (Eliminamos un recurso)
+
+        routes/web.php
+
+            Route::ApiResource('projects', 'PortfolioController');
+            Route::ApiResource('projects', 'PortfolioController')->only(['index', 'show']);
+            Route::ApiResource('projects', 'PortfolioController')->except(['index', 'show']);
+
+        > php artisan r:l
+
+            +--------+-----------+--------------------+------------------+--------------------------------------------------+------------+
+            | Domain | Method    | URI                | Name             | Action                                           | Middleware |
+            +--------+-----------+--------------------+------------------+--------------------------------------------------+------------+
+            |        | GET|HEAD  | projects           | projects.index   | App\Http\Controllers\PortfolioController@index   | web        |
+            |        | POST      | projects           | projects.store   | App\Http\Controllers\PortfolioController@store   | web        |
+            |        | GET|HEAD  | projects/{project} | projects.show    | App\Http\Controllers\PortfolioController@show    | web        |
+            |        | PUT|PATCH | projects/{project} | projects.update  | App\Http\Controllers\PortfolioController@update  | web        |
+            |        | DELETE    | projects/{project} | projects.destroy | App\Http\Controllers\PortfolioController@destroy | web        |
+            +--------+-----------+--------------------+------------------+--------------------------------------------------+------------+
+
+
+
+

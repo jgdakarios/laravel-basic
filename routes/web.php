@@ -22,4 +22,4 @@ use Illuminate\Support\Facades\Route;
 // Route::get('portfolio', 'PortfolioController@index')->name('portfolio');
 // Route::view('contact', 'contact')->name('contact');
 
-Route::resource('projects', 'PortfolioController');
+Route::ApiResource('projects', 'PortfolioController');
