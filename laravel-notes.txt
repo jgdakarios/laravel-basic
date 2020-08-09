@@ -7,7 +7,6 @@
         @section('title', 'Hello! | Home')
         @section('content') - @endsection
 
-
 # Controladores
 
     app/Http/Controllers
@@ -25,7 +24,6 @@
 
 
     > php artisan make:controller PortfolioController -i (Create a Controller with invoke method)
-
 
 # Controladores Resources y API.
 
@@ -90,6 +88,45 @@
             |        | PUT|PATCH | projects/{project} | projects.update  | App\Http\Controllers\PortfolioController@update  | web        |
             |        | DELETE    | projects/{project} | projects.destroy | App\Http\Controllers\PortfolioController@destroy | web        |
             +--------+-----------+--------------------+------------------+--------------------------------------------------+------------+
+
+# Creando Helpers
+
+    app/helpers.php
+
+        Se crea file con funciones helpers.
+
+    composer.json
+
+        "autoload": {
+            "psr-4": {
+                "App\\": "app/"
+            },
+            "classmap": [
+                "database/seeds",
+                "database/factories"
+            ],
+            "files": ["app/helpers.php"] <-------
+        },
+
+        > composer dumpautoload
+
+            Generating optimized autoload files
+            > Illuminate\Foundation\ComposerScripts::postAutoloadDump
+            > @php artisan package:discover --ansi
+            Discovered Package: facade/ignition
+            Discovered Package: fideloper/proxy
+            Discovered Package: fruitcake/laravel-cors
+            Discovered Package: laravel/tinker
+            Discovered Package: nesbot/carbon
+            Discovered Package: nunomaduro/collision
+            Package manifest generated successfully.
+            Generated optimized autoload files containing 4415 classes
+
+    Blade template
+
+        incluir archivos parciales
+
+            @include('partials.nav')
 
 
 
