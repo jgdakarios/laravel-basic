@@ -136,5 +136,26 @@
             @csrf
         </form>
 
+# Validacion de formularios.
+
+    # Controller
+
+        request()->validate([
+            'name'      => 'required',
+            'email'     => 'required|email',
+            'subject'   => 'required',
+            'content'   => 'required|min:3',
+        ]);
+
+    # View
+
+        @if( $errors->any() )
+            @foreach( $errors->all() as $error )
+                <ul>
+                    <li>{{ $error }}</li>
+                </ul>
+            @endforeach
+        @endif
+
 
 
