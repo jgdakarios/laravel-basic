@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Hello Laravel!</title>
-    </head>
-    <body>
-        <h1>Hello</h1>
+@extends('layout')
 
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
+@section('title', 'Hello! | Home')
 
-        Bienvenid@... <?= ($name) ?? "Invitado"; ?>
-    </body>
-</html>
+@section('content')
+
+<h1>Hello</h1>
+
+@endsection
