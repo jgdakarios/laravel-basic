@@ -1,0 +1,27 @@
+# Plantillas Blade.
+
+    Layout: 
+        @yield('title'), @yield('content')
+
+    home:     
+        @section('title', 'Hello! | Home')
+        @section('content') - @endsection
+
+
+# Controladores
+
+    app/Http/Controllers
+
+    > php artisan route:list (r:l)
+
+        +--------+----------+-----------+-----------+-----------------------------------+------------+
+        | Domain | Method   | URI       | Name      | Action                            | Middleware |
+        +--------+----------+-----------+-----------+-----------------------------------+------------+
+        |        | GET|HEAD | /         | home      | Illuminate\Routing\ViewController | web        |
+        |        | GET|HEAD | about     | about     | Illuminate\Routing\ViewController | web        |
+        |        | GET|HEAD | contact   | contact   | Illuminate\Routing\ViewController | web        |
+        |        | GET|HEAD | portfolio | portfolio | Illuminate\Routing\ViewController | web        |
+        +--------+----------+-----------+-----------+-----------------------------------+------------+
+
+
+    > php artisan make:controller PortfolioController -i (Create a Controller with invoke method)
