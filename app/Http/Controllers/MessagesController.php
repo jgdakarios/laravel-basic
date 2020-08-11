@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MessageReceived;
 
 class MessagesController extends Controller
 {
     public function store(Request $request)
     {
-        request()->validate([
+        $message = request()->validate([
             'name'      => 'required',
             'email'     => 'required|email',
             'subject'   => 'required',
@@ -17,6 +19,8 @@ class MessagesController extends Controller
             'name.required'     => __('I need your name') // Custom messages
         ]);
 
-        return 'Datos validados';
+        Mail::to('jgdakarios@gmail.com')->queue(new MessageReceived( $message ));
+        
+        return 'Mensaje Enviado';
     }
 }

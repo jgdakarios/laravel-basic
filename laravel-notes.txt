@@ -163,5 +163,8 @@
 
         'locale' => 'es',
 
+# Enviar emails con Laravel
 
+    Create a new email class
+        > php artisan make:mail MessageReceived
 
