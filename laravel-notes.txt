@@ -157,5 +157,11 @@
             @endforeach
         @endif
 
+# Traducir aplicaciones en laravel
+
+    config/app.config
+
+        'locale' => 'es',
+
 
 
