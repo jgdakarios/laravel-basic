@@ -211,6 +211,6 @@
             > php artisan make:migration (migration_name) --table=table_name
             > php artisan make:migration ..._to_...
     
-
+# Eloquent: Obtener datos
 
 
