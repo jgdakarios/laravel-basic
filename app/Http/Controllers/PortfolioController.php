@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\Project;
 
 class PortfolioController extends Controller
 {
@@ -14,8 +14,10 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $portfolio = DB::table('projects')->get();
-
+        // $portfolio = Project::get();
+        // $portfolio = Project::OrderBy('created_at', 'DESC')->get();
+        $portfolio = Project::latest()->get();
+        
         return view('portfolio', compact('portfolio'));
     }
 }
