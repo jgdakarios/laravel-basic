@@ -185,3 +185,32 @@
             MAIL_FROM_ADDRESS=sender@sender.com
             MAIL_FROM_NAME='Joseph Dakkak'
 
+# Migraciones
+
+    Control de versiones para la base de datos.
+
+    Ejecutar Migraciones
+        > php artisan migrate
+
+    Ejecutar Migraciones desde 0
+        >php artisan migrate:fresh
+
+    Hacer Rollback
+        > php artisan migrate:rollback
+
+    Hacer Rollback del ultimos step
+        > php artisan migrate:rollback --step=1
+
+    Crear Migraciones
+
+        Crear tabla
+            > php artisan make:migration (migration_name) --create=table_name
+            > php artisan make:migration create_...
+
+        Crear tabla
+            > php artisan make:migration (migration_name) --table=table_name
+            > php artisan make:migration ..._to_...
+    
+
+
+
