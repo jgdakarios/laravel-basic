@@ -14,4 +14,6 @@
         <li>No hay proyectos para mostrar</li>
     @endforelse
 
+    {{ $portfolio->links() }}
+
 @endsection

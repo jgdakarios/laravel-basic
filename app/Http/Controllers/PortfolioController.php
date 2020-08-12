@@ -16,8 +16,9 @@ class PortfolioController extends Controller
     {
         // $portfolio = Project::get();
         // $portfolio = Project::OrderBy('created_at', 'DESC')->get();
-        $portfolio = Project::latest()->get();
-        
+        // $portfolio = Project::latest()->get();
+        $portfolio = Project::latest()->paginate(2);
+
         return view('portfolio', compact('portfolio'));
     }
 }
