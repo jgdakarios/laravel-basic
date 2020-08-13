@@ -19,7 +19,7 @@ Route::view('/', 'home')->name('home');
 Route::view('about', 'about')->name('about');
 
 Route::get('project', 'ProjectController@index')->name('projects.index');
-Route::get('project/{id}', 'ProjectController@show')->name('projects.show');
+Route::get('project/{project}', 'ProjectController@show')->name('projects.show');
 
 Route::view('contact', 'contact')->name('contact');
 
