@@ -24,10 +24,38 @@ class ProjectController extends Controller
         ]);
     }
 
+    /**
+     * Display a specific resource
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function show( Project $project )
     {
         return view('projects.show', [
             'project'   => $project
         ]);
+    }
+
+    /**
+     * Display a create resource view.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('projects.create');
+    }
+
+    public function store()
+    {
+        // Project::create([
+        //     'title'         => request('title'),
+        //     'url'           => request('url'),
+        //     'description'   => request('description')
+        // ]);
+
+        Project::create( request()->all() );
+
+        return redirect()->route('projects.index');
     }
 }

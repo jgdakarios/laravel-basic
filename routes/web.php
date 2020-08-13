@@ -18,8 +18,12 @@ App::setLocale('es');
 Route::view('/', 'home')->name('home');
 Route::view('about', 'about')->name('about');
 
+# Projects routes
 Route::get('project', 'ProjectController@index')->name('projects.index');
+Route::get('project/create', 'ProjectController@create')->name('projects.create');
+Route::post('project', 'ProjectController@store')->name('projects.store');
 Route::get('project/{project}', 'ProjectController@show')->name('projects.show');
+
 
 Route::view('contact', 'contact')->name('contact');
 
