@@ -266,4 +266,9 @@
         Eg. deshabilitar proteccion
             protected $guarded = [];
 
+# Form Requests Validations
+    
+    Clases dedicadas para encapsular la logica de validacion y autorizacion. Pensados para 
+    validar formularios complejos. Se crean en "app/Http/Requests"
 
+        > php artisan make:request CreateProjectRequest
