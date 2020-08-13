@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 
-class PortfolioController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,17 @@ class PortfolioController extends Controller
         // $portfolio = Project::get();
         // $portfolio = Project::OrderBy('created_at', 'DESC')->get();
         // $portfolio = Project::latest()->get();
-        $portfolio = Project::latest()->paginate(2);
+        // $projects = Project::latest()->paginate();
 
-        return view('portfolio', compact('portfolio'));
+        return view('projects.index', [
+            'projects' => Project::latest()->paginate()
+        ]);
+    }
+
+    public function show($id)
+    {
+        return view('projects.show', [
+            'project'   => Project::findOrFail( $id )
+        ]);
     }
 }
