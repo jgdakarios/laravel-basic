@@ -251,4 +251,19 @@
                 --env[=ENV]       The environment the command should run under
             -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug  
 
+# Asignacion masiva
+
+    Metodo de proteccion en el insertado de datos.
+
+    En el modelo.
+
+        Eg. permitir campos
+            protected $fillable = ['title', 'url', 'description'];
+
+        Eg. bloquear campos
+            protected $guarded = ['title', 'url', 'description'];
+
+        Eg. deshabilitar proteccion
+            protected $guarded = [];
+
 
