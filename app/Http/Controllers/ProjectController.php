@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 # Form Requests Validations
-use App\Http\Requests\CreateProjectRequest;
+use App\Http\Requests\SaveProjectRequest;
 
 # Models
 use App\Project;
@@ -51,7 +51,7 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
-    public function store( CreateProjectRequest $request )
+    public function store( SaveProjectRequest $request )
     {
 
         // $fields = request()->validate([
@@ -75,5 +75,21 @@ class ProjectController extends Controller
         Project::create( $request->validated() );
 
         return redirect()->route('projects.index');
+    }
+
+    public function edit( Project $project )
+    {
+        return view('projects.edit', [
+            'project'   => $project
+        ]);
+    }
+
+    public function update( Project $project, SaveProjectRequest $request )
+    {
+        
+        $project->update( $request->validated() );
+
+        return redirect()->route('projects.show', $project);
+
     }
 }
