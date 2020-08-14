@@ -20,8 +20,8 @@ Route::view('about', 'about')->name('about');
 
 # Projects routes
 Route::get('project', 'ProjectController@index')->name('projects.index');
-Route::get('project/{project}', 'ProjectController@show')->name('projects.show');
 Route::get('project/create', 'ProjectController@create')->name('projects.create');
+Route::get('project/{project}', 'ProjectController@show')->name('projects.show');
 Route::get('project/{project}/edit', 'ProjectController@edit')->name('projects.edit');
 
 Route::patch('project/{project}', 'ProjectController@update')->name('projects.update');
