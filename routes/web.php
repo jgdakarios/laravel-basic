@@ -22,14 +22,16 @@ Route::view('/', 'home')->name('home');
 # About
 Route::view('about', 'about')->name('about');
 
-# Projectss
-Route::get('project', 'ProjectController@index')->name('projects.index');
-Route::get('project/create', 'ProjectController@create')->name('projects.create');
-Route::get('project/{project}', 'ProjectController@show')->name('projects.show');
-Route::get('project/{project}/edit', 'ProjectController@edit')->name('projects.edit');
-Route::patch('project/{project}', 'ProjectController@update')->name('projects.update');
-Route::post('project', 'ProjectController@store')->name('projects.store');
-Route::delete('project/{project}', 'ProjectController@destroy')->name('projects.destroy');
+# Projects
+Route::resource('projects', 'ProjectController');
+
+// Route::get('project', 'ProjectController@index')->name('projects.index');
+// Route::get('project/create', 'ProjectController@create')->name('projects.create');
+// Route::get('project/{project}', 'ProjectController@show')->name('projects.show');
+// Route::get('project/{project}/edit', 'ProjectController@edit')->name('projects.edit');
+// Route::patch('project/{project}', 'ProjectController@update')->name('projects.update');
+// Route::post('project', 'ProjectController@store')->name('projects.store');
+// Route::delete('project/{project}', 'ProjectController@destroy')->name('projects.destroy');
 
 # Contact
 Route::view('contact', 'contact')->name('contact');

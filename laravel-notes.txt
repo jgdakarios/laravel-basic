@@ -272,3 +272,39 @@
     validar formularios complejos. Se crean en "app/Http/Requests"
 
         > php artisan make:request CreateProjectRequest
+
+# Route Resource
+
+    > php artisan route:list --name=projects
+
+        +--------+----------+------------------------+------------------+------------------------------------------------+------------+
+        | Domain | Method   | URI                    | Name             | Action                                         | Middleware |
+        +--------+----------+------------------------+------------------+------------------------------------------------+------------+
+        |        | GET|HEAD | project                | projects.index   | App\Http\Controllers\ProjectController@index   | web        |
+        |        | POST     | project                | projects.store   | App\Http\Controllers\ProjectController@store   | web        |
+        |        | GET|HEAD | project/create         | projects.create  | App\Http\Controllers\ProjectController@create  | web        |
+        |        | GET|HEAD | project/{project}      | projects.show    | App\Http\Controllers\ProjectController@show    | web        |
+        |        | PATCH    | project/{project}      | projects.update  | App\Http\Controllers\ProjectController@update  | web        |
+        |        | DELETE   | project/{project}      | projects.destroy | App\Http\Controllers\ProjectController@destroy | web        |
+        |        | GET|HEAD | project/{project}/edit | projects.edit    | App\Http\Controllers\ProjectController@edit    | web        |
+        +--------+----------+------------------------+------------------+------------------------------------------------+------------+
+
+    > php artisan route:list --method=POST
+
+        +--------+--------+---------+----------------+----------------------------------------------+------------+
+        | Domain | Method | URI     | Name           | Action                                       | Middleware |
+        +--------+--------+---------+----------------+----------------------------------------------+------------+
+        |        | POST   | contact | message.store  | App\Http\Controllers\MessageController@store | web        |
+        |        | POST   | project | projects.store | App\Http\Controllers\ProjectController@store | web        |
+        +--------+--------+---------+----------------+----------------------------------------------+------------+
+
+    routes/web.php (Rutas REST)
+
+        Route::resource('projects', 'ProjectController');
+            -> index
+            -> store
+            -> create
+            -> show
+            -> update
+            -> destroy
+            -> edit
