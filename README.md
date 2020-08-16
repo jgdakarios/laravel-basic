@@ -1,3 +1,7 @@
+## Proyecto práctico:
+
+Este repositorio alberga el proyecto práctico desarrollado en el [Curso Gratuito Aprende Laravel desde cero](https://aprendible.com/series/laravel-desde-cero).
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">

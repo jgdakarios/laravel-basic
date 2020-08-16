@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Hello! | Portfolio')
+@section('title', 'Hello! | Proyectos')
 
 @section('content')
 

@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Hello! | Crear projecto')
+@section('title', 'Hello! | Crear Proyectos')
 
 @section('content')
 

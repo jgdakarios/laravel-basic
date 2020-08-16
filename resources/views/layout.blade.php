@@ -31,10 +31,6 @@
             <footer class="bg-white text-center text-black-50 py-3 shadow">
                 {{ config('app.name') }} | Copyright @ {{ date('Y') }}
             </footer>
-        </div>
-
-        
-        
-        
+        </div>  
     </body>
 </html>
