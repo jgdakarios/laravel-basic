@@ -308,3 +308,46 @@
             -> update
             -> destroy
             -> edit
+
+# Implementando Login y Registro.
+
+    Se debe incporar el paquete laravel/ui
+
+        > composer require laravel/ui
+    
+        > php artisan make:auth
+
+            Esto creara una ruta auth en routes/web.php
+
+                Auth::routes();
+
+                    LoginController (namespace App\Http\Controllers\Auth)
+                    
+                    GET     /login      => Para mostrar el formulario de login.
+                    POST    /login      => Donde se envia el formulario del login
+                    POST    /logout     => Para cerrar sesión.
+
+                    RegisterController (namespace App\Http\Controllers\Auth)
+
+                    GET     /register   => Para mostrar el formulario de registro.
+                    POST    /register   => Donde se envia el formulario de registro.
+
+        Vistas: resources/views/
+
+            auth/
+                login.blade.php
+                register.blade.php
+
+            layouts/
+                app.blade.php
+
+        Directivas para las vistas:
+
+            @gest / @endguest
+            @auth / @endauth
+
+        Deshabilitar registro o ruta auth
+
+            Auth::routes([
+                'register'  => false
+            ]);

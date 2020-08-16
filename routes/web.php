@@ -36,3 +36,7 @@ Route::resource('projects', 'ProjectController');
 # Contact
 Route::view('contact', 'contact')->name('contact');
 Route::post('contact', 'MessageController@store')->name('message.store');
+
+Auth::routes([
+    'register'  => false
+]);

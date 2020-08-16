@@ -6,4 +6,8 @@
 
     <h1>Hello</h1>
 
+    @auth
+        {{ auth()->user()->name }}
+    @endauth
+    
 @endsection
