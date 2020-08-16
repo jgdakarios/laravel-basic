@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>{{ __('Contact') }}</h1>
-
+    
     <!-- @if( $errors->any() )
         @foreach( $errors->all() as $error )
             <ul>
@@ -29,4 +29,6 @@
 
         <button>@lang('Send')</button>
     </form>
+
+    
 @endsection

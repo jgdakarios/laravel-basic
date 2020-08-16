@@ -8,6 +8,8 @@
 
     <a href="{{ route('projects.edit', $project) }}">Editar proyecto</a>
 
+    @include('partials.session-status')
+
     <form method="POST" action="{{ route('projects.destroy', $project) }}">
         @csrf @method('DELETE')
         <button>Eliminar</button>
