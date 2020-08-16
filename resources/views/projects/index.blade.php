@@ -4,23 +4,35 @@
 
 @section('content')
 
-    <h1>Projects</h1>
+    <div class="container">
 
-    @auth
-        <a href="{{ route('projects.create') }}">Crear proyecto</a>
-    @endauth
-    
-    <ul>
-        @forelse($projects as $project)
-            <!-- <li>{{ $project->title }} <br><small>{{ $project->description }}</small> <br> {{ $project->created_at->format('Y-m-d') }} </li> -->
-            <!-- <li>{{ $project->title }} <br><small>{{ $project->description }}</small> <br> {{ $project->created_at->diffForHumans() }} </li> -->
-            <li><a href=" {{ route('projects.show', $project) }}">{{ $project->title }}</a></li>
-        @empty
-            <li>No hay proyectos para mostrar</li>
-        @endforelse
-    </ul>
-    
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="display-4 mb-0">Projects</h1>
+            @auth
+                <a class="btn btn-primary" href="{{ route('projects.create') }}">Crear proyecto</a>
+            @endauth
+        </div>
 
-    {{ $projects->links() }}
+        <p class="lead text-secondary">Proyectos realizados Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+        <ul class="list-group">
+            @forelse($projects as $project)
+                <li class="list-group-item border-0 mb-3 shadow-sm">
+                    <a class="d-flex justify-content-between align-items-center text-secondary" href=" {{ route('projects.show', $project) }}">
+
+                        <span class="font-weight-bold">{{ $project->title }}</span>
+                        <span class="text-black-50">{{ $project->created_at->format('d/m/y') }}</span>
+
+                    </a>
+                </li>
+            @empty
+                <li class="list-group-item border-0 mb-3 shadow-sm">No hay proyectos para mostrar</li>
+            @endforelse
+        </ul>
+
+        {{ $projects->links() }}
+
+    </div>
+    
 
 @endsection

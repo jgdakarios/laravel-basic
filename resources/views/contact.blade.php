@@ -8,7 +8,7 @@
 
         <div class="row">
             <div class="col-12 col-sm-10 col-lg-6 mx-auto">
-            
+
                 <!-- @if( $errors->any() )
                     @foreach( $errors->all() as $error )
                         <ul>
@@ -21,6 +21,7 @@
                     @csrf
 
                     <h1 class="display-4">{{ __('Contact') }}</h1>
+                    <hr>
 
                     <div class="form-group">
                         <label for="name">Nombre</label>
