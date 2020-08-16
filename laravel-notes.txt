@@ -351,3 +351,22 @@
             Auth::routes([
                 'register'  => false
             ]);
+
+# Protegiendo rutas con auth
+
+    # Midddlewares
+
+        Filtran peticiones HTTP
+
+
+
+
+
+
+
+
+
+
+
+
+
